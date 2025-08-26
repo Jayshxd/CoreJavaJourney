@@ -1,9 +1,7 @@
 package oop.inheritance;
 
 public class Box {
-    int l;
-    int h;
-    int w;
+    int l,h,w;
 
     Box(int l, int h, int w) {
         this.l = l;
