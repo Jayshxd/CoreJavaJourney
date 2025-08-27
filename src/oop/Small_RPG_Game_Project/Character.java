@@ -6,16 +6,21 @@ public class Character {
     private int level;
      int impact;
     private  int damage;
+    private short xp;
+
+
 
     Character(){
         this.name = "unknown";
         this.health = 100;
         this.level = 1;
+        this.xp = 0;
     }
     Character(String name){
         this.name = name;
         this.health = 100;
         this.level = 1;
+        this.xp = 0;
     }
     void defend(int impact){
         this.health -= this.impact;
@@ -29,6 +34,12 @@ public class Character {
     void specialAbility(){
         System.out.println(this.name + "uses special abilitiy");
     }
+    void defends(){
+        System.out.println(this.name + "defends");
+    }
+    void xpUp(){
+        System.out.println(this.name + "xp ++");
+    }
 
     public int getHealth(){
         return this.health;
@@ -36,10 +47,21 @@ public class Character {
     public String getName(){
         return this.name;
     }
+    public void setName(String name){
+        this.name = name;
+    }
     public int getLevel(){
         return this.level;
     }
     public void setHealth(int health){
         this.health = health;
     }
+    public void setXp(byte xp){
+        this.xp = xp;
+
+    }
+    public short getXp(){
+        return this.xp;
+    }
+
 }
