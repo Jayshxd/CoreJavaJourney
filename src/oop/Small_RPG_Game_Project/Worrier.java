@@ -48,7 +48,7 @@ public class Worrier extends Character {
         }else if(this.getHealth() < 10){
             System.out.println("Warning health is less than 10");
         }
-        int increaseHealth = Math.min(this.getHealth() + 5, 100);
+//        int increaseHealth = Math.min(this.getHealth() + 5, 100);
         System.out.println("Current Health : "+this.getHealth());
         increaseLevel(DEFEND_XP);
     }
