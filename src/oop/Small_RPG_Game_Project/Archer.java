@@ -37,6 +37,13 @@ public class Archer extends Character{
         System.out.println("Gets "+DAMAGE+" damage.");
         int curHealth = Math.max(this.getHealth()-DAMAGE,0);
         this.setHealth(curHealth);
+        if(this.getHealth() < 50){
+            System.out.println("Warning health is less than 50");
+        }else if(this.getHealth() < 25){
+            System.out.println("Warning health is less than 25");
+        }else if(this.getHealth() < 10){
+            System.out.println("Warning health is less than 10");
+        }
         int increaseHealth = Math.min(this.getHealth() + 5, 100);
         System.out.println("Current Health : "+this.getHealth());
         increaseLevel(DEFEND_XP);
