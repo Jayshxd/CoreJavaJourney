@@ -23,7 +23,23 @@ public class Character {
     void levelup(){
         this.level++;
     }
-    void attack(int damage){
-        System.out.println(this.name + "attacks and deals "+this.damage );
+    void attack(){
+        System.out.println(this.name + "attacks");
+    }
+    void specialAbility(){
+        System.out.println(this.name + "uses special abilitiy");
+    }
+
+    public int getHealth(){
+        return this.health;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public int getLevel(){
+        return this.level;
+    }
+    public void setHealth(int health){
+        this.health = health;
     }
 }
