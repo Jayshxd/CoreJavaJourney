@@ -34,11 +34,22 @@ public class Character {
     void specialAbility(){
         System.out.println(this.name + "uses special abilitiy");
     }
-    void defends(){
+    void defend(){
         System.out.println(this.name + "defends");
     }
     void xpUp(){
         System.out.println(this.name + "xp ++");
+    }
+
+    void increaseLevel(int damage){
+        System.out.println(this.name + "increase level");
+    }
+
+    void stats(){
+        System.out.println(this.name);
+        System.out.println("Health :"+this.health);
+        System.out.println("Level :"+this.level);
+        System.out.println("XP :"+this.xp);
     }
 
     public int getHealth(){
