@@ -18,7 +18,7 @@ public class Archer extends Character{
         super.attack();
         int DAMAGE = 20;
         System.out.println("Arrow Shot" + "Deals : "+ DAMAGE + "damage.");
-        int increaseHealth = this.getHealth()+ 10;
+        int increaseHealth = Math.min(this.getHealth() + 10, 100);
         this.setHealth(increaseHealth);
         increaseLevel(ATTACK_XP);
     }
@@ -27,15 +27,17 @@ public class Archer extends Character{
         super.specialAbility();
         int DAMAGE = 45;
         System.out.println("Multi Shot" + "Deals : "+ DAMAGE + "damage.");
+        int increaseHealth = Math.min(this.getHealth() + 10, 100);
         increaseLevel(SPECIAL_XP);
     }
     @Override
-    void defends(){
-        super.defends();
+    void defend(){
+        super.defend();
         int DAMAGE = 5;
         System.out.println("Gets "+DAMAGE+" damage.");
         int curHealth = Math.max(this.getHealth()-DAMAGE,0);
         this.setHealth(curHealth);
+        int increaseHealth = Math.min(this.getHealth() + 5, 100);
         System.out.println("Current Health : "+this.getHealth());
         increaseLevel(DEFEND_XP);
 
@@ -45,7 +47,7 @@ public class Archer extends Character{
         short curXp = (short) (this.getXp()+damage);
         this.setXp((byte) curXp);
         if(this.getXp() >= 100){
-            xp = 0;
+            this.setXp((byte) 0);
             levelup();
         }
     }
