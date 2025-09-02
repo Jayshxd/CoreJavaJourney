@@ -1,4 +1,4 @@
-package com.javajourney.comparable_comparator;
+package com.javajourney.comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;

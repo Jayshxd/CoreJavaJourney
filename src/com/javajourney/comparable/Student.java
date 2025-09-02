@@ -1,4 +1,4 @@
-package com.javajourney.comparable_comparator;
+package com.javajourney.comparable;
 
 public class Student implements Comparable<Student> {
     private String name;
