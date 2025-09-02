@@ -1,6 +1,6 @@
-package com.javajourney.comparable_comparator;
+package com.javajourney.comparator;
 
-public class Student implements Comparable<Student> {
+public class Student{
     private String name;
     private int rollNo;
     private int percent;
@@ -37,8 +37,4 @@ public class Student implements Comparable<Student> {
         return this.name+" "+this.rollNo+" "+this.percent;
     }
 
-    @Override
-    public int compareTo(Student other) {
-        return this.rollNo-other.rollNo;
-    }
 }
