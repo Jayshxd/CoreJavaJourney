@@ -24,12 +24,12 @@ public class Main {
         //📌Substring & Parts
         str.substring(2);       // from index 2 till end
         str.substring(2, 5);     // from index 2 to 4
-        str.replace("a","aa");
+        str.replace("a", "aa");
 
 
         //📌Search
-        str.indexOf("a")        // first index of "a" (else -1)
-        str.lastIndexOf("a")    // last index
+        str.indexOf("a");        // first index of "a" (else -1)
+        str.lastIndexOf("a") ;   // last index
 
 
         String[] s1arr = str.split(" ");
