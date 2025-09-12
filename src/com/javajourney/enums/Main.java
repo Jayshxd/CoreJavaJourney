@@ -9,7 +9,8 @@ public class Main {
 
 
         for(Size x : Size.values()) {
-            //System.out.println(x);
+            System.out.println(x.name());
         }
+
     }
 }
