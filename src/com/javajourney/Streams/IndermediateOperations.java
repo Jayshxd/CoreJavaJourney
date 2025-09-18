@@ -41,6 +41,11 @@ System.out.println("------------------------------------------------------------
         System.out.println(distinctList);
 
 
+        System.out.println("------------------------------------------------------------------------------");
+        //peek
+        Stream.of(1,2,3).peek(p->System.out.print(p+",")).map(p->p*p*p).collect(Collectors.toList()).forEach(System.out::print);
+
+
 
 
 
