@@ -2,6 +2,8 @@ package com.javajourney.Streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -79,6 +81,24 @@ System.out.println("------------------------------------------------------------
         Stream<String> streamOfString = Stream.of("jayesh","mahesh","suresh");
         String[] stringArray = streamOfString.toArray(String[]::new);
         System.out.println(Arrays.toString(stringArray));
+
+
+
+        System.out.println("------------------------------------------------------------------------------");
+        //mapToInt usage with Aggregates
+        //cant use .sum.max.min.avg etc
+        //can be possible only with primitives
+        int sum = Stream.of(1,2,3,4,5).mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
+        OptionalInt min = Stream.of(1,2,3,4,5).mapToInt(Integer::intValue).min();
+        System.out.println(min.getAsInt());
+        OptionalDouble avg = Stream.of(1,2,3,4,5).mapToInt(Integer::intValue).average();
+        System.out.println(avg.getAsDouble());
+
+        //Sorted with comparator
+        List<Integer> sortedListWithComparator = Stream.of(2,6,3,1,2,3,5,1,3,5,7,3,7,3,7,4,7,6,3,2,2,262,8,4,2,3,7,8,3,3).sorted((Integer x1,Integer x2)->x2-x1).collect(Collectors.toList());
+        System.out.println(sortedListWithComparator);
+
 
 
 
