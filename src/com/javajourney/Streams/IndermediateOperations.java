@@ -15,6 +15,14 @@ public class IndermediateOperations {
         System.out.println(list);
 System.out.println("------------------------------------------------------------------------------");
         //MAP
+        Stream.of(1,2,3,4,5).map(i->i*i).forEach(str->System.out.print(str+"->"));
+        System.out.println();
+
+        List<Integer> listOfAsci = Stream.of('a','b','c').map(ch->(int)ch).collect(Collectors.toList());
+        System.out.println(listOfAsci);
+
+        System.out.println("------------------------------------------------------------------------------");
+
 
 
 
