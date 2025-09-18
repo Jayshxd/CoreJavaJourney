@@ -22,6 +22,17 @@ System.out.println("------------------------------------------------------------
         System.out.println(listOfAsci);
 
         System.out.println("------------------------------------------------------------------------------");
+        //iterate and Limit
+        Stream<Integer> streamOfIntegers=Stream.iterate(100,n->n+100).limit(10);
+        List<Integer> listOfIteratedIntegers = streamOfIntegers.collect(Collectors.toList());
+        System.out.println(listOfIteratedIntegers);
+
+        List<Integer> limitedIntegers = Stream.of(1,2,2,2,2,2,2,2,2).limit(2).collect(Collectors.toList());
+        System.out.println(limitedIntegers);
+
+
+
+
 
 
 
