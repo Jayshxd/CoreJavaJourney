@@ -35,6 +35,13 @@ System.out.println("------------------------------------------------------------
         List<Integer> sortedList = Stream.of(2,6,3,1,2,3,5,1,3,5,7,3,7,3,7,4,7,6,3,2,2,262,8,4,2,3,7,8,3,3).sorted().collect(Collectors.toList());
         System.out.println(sortedList);
 
+        System.out.println("------------------------------------------------------------------------------");
+        //distinct
+        List<Integer> distinctList = Stream.of(2,6,3,1,2,3,5,1,3,5,7,3,7,3,7,4,7,6,3,2,2,262,8,4,2,3,7,8,3,3).distinct().sorted().collect(Collectors.toList());
+        System.out.println(distinctList);
+
+
+
 
 
 
