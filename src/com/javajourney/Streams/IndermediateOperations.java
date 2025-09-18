@@ -3,6 +3,7 @@ package com.javajourney.Streams;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class IndermediateOperations {
@@ -46,6 +47,38 @@ System.out.println("------------------------------------------------------------
         Stream.of(1,2,3).peek(p->System.out.print(p+",")).map(p->p*p*p).collect(Collectors.toList()).forEach(System.out::print);
 
 
+
+        System.out.println("------------------------------------------------------------------------------");
+        //boxed() ***
+        //IntStream -> Stream<Integer> -> List<Integer>
+        Stream<Integer> boxedStreamOfIntegers=IntStream.range(1,6).boxed();
+        List<Integer> listOfBoxedIntegers = boxedStreamOfIntegers.collect(Collectors.toList());
+        System.out.println(listOfBoxedIntegers);
+
+
+
+
+        System.out.println("------------------------------------------------------------------------------");
+
+        //mapTOInt()
+        //Stream<T>  ->  IntStream (Primitive Stream)
+
+        Stream<Integer> streamOfArrayIntegers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        IntStream streamOfMapToInt = streamOfArrayIntegers.mapToInt(j->j.intValue());
+
+
+        //converting to normal array
+        int[] arr = streamOfMapToInt.toArray();
+        //or chaining
+        Stream<Integer> streamOfArrayIntegers2 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        int[] arr1 = streamOfArrayIntegers2.mapToInt(Integer::intValue).toArray();
+
+
+        //for Objects like Strings it requires arguments in toArray()
+        //that what type of array do you want
+        Stream<String> streamOfString = Stream.of("jayesh","mahesh","suresh");
+        String[] stringArray = streamOfString.toArray(String[]::new);
+        System.out.println(Arrays.toString(stringArray));
 
 
 
