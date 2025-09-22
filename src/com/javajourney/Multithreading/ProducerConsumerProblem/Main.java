@@ -1,15 +1,16 @@
 package com.javajourney.Multithreading.ProducerConsumerProblem;
 
+import java.util.ArrayDeque;
+
 public class Main {
-    public static void main(String[] args) {
-        Box box = new Box();
-        Producer producer = new Producer(box);
-        Consumer consumer = new Consumer(box);
-        Thread filler = new Thread(producer,"Filler");
-        Thread taker = new Thread(consumer,"Taker");
-
-        taker.start();
-        filler.start();
-
+    public static void main(String[] args) throws InterruptedException {
+        SharedRes sharedObj = new SharedRes(new ArrayDeque<>(),3);
+        Producer producer = new Producer(sharedObj);
+        Consumer consumer = new Consumer(sharedObj);
+        Thread t1 = new Thread(producer,"Jayesh");
+        Thread t2 = new Thread(consumer,"Savita");
+        t2.start();
+        Thread.sleep(2000);
+        t1.start();
     }
 }
