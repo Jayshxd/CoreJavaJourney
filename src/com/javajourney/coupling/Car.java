@@ -6,6 +6,7 @@ public class Car {
         this.engine = engine;
     }
     public void run(){
+        engine.start();
         System.out.println("Car is running ...");
     }
 }
